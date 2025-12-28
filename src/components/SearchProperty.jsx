@@ -711,6 +711,57 @@ export default function SearchProperty({ onViewProperty }) {
     </aside>
 
   </main>
+  {/* Why Choose Us Section */}
+      <section className="why-choose-section">
+        <div className="why-choose-container">
+          <h2 className="why-choose-title">Why Choose Us?</h2>
+          <p className="why-choose-subtitle">
+            Discover what makes ChoozeIT platform stand out
+          </p>
+
+          <div className="features-grid">
+            <div className="feature-card">
+              <div className="feature-icon">
+                <Search size={32} />
+              </div>
+              <h3 className="feature-title">Advanced Search</h3>
+              <p className="feature-description">
+                Find your perfect property with our powerful search filters. Search by location, price, bedrooms, and more.
+              </p>
+            </div>
+
+            <div className="feature-card">
+              <div className="feature-icon">
+                <Shield size={32} />
+              </div>
+              <h3 className="feature-title">Trusted & Secure</h3>
+              <p className="feature-description">
+                Your data is protected with industry-leading security. Browse properties with complete peace of mind.
+              </p>
+            </div>
+
+            <div className="feature-card">
+              <div className="feature-icon">
+                <Heart size={32} />
+              </div>
+              <h3 className="feature-title">Save Favorites</h3>
+              <p className="feature-description">
+                Create your personalized collection of favorite properties and access them anytime, anywhere.
+              </p>
+            </div>
+
+            <div className="feature-card">
+              <div className="feature-icon">
+                <Award size={32} />
+              </div>
+              <h3 className="feature-title">Quality Listings</h3>
+              <p className="feature-description">
+                All properties are verified and up-to-date. We ensure you get accurate information every time.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 </div>
 );
 }
