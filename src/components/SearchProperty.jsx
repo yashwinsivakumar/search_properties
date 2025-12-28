@@ -600,7 +600,26 @@ export default function SearchProperty({ onViewProperty }) {
                       className="property-image"
                     />
                     <div className="property-type-badge">{property.type}</div>
-                    
+                    <button
+                      className={`favourite-btn ${
+                        isFavourite(property.id) ? "active" : ""
+                      }`}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        addToFavourites(property);
+                      }}
+                      aria-label={
+                        isFavourite(property.id)
+                          ? "Remove from favourites"
+                          : "Add to favourites"
+                      }
+                    >
+                      <Heart
+                        size={20}
+                        color={isFavourite(property.id) ? '#e53e3e' : 'white'}
+                        fill={isFavourite(property.id) ? '#e53e3e' : 'none'}
+                      />
+                    </button>
                   </div>
 
                   {/* Property Content */}
@@ -638,6 +657,59 @@ export default function SearchProperty({ onViewProperty }) {
             </div>
           </section>
         </div>
+        {/* Right Side - Favourites */}
+    <aside className="favourites-sidebar" aria-label="Favourites">
+      <div
+        className="favourites-container"
+        onDragOver={handleDragOver}
+        onDrop={handleDropToFavourites}
+      >
+        <div className="favourites-header">
+          <h3 className="favourites-title">
+            <Heart size={20} fill="#e53e3e" color="#e53e3e" />
+            Favourites ({favourites.length})
+          </h3>
+          {favourites.length > 0 && (
+            <button
+              onClick={clearFavourites}
+              className="clear-btn"
+              title="Clear all"
+              aria-label="Clear all favourites"
+            >
+              <Trash2 size={18} />
+            </button>
+          )}
+        </div>
+
+        {favourites.length === 0 ? (
+          <div className="favourites-empty" role="status">
+            <Heart size={32} aria-hidden="true" />
+            <p>Drag properties here or click the heart icon</p>
+          </div>
+        ) : (
+          <div className="favourites-list">
+            {favourites.map((fav) => (
+              <div
+                key={fav.id}
+                className="favourite-item"
+                draggable
+                onDragStart={(e) => handleDragStart(e, fav)}
+                role="article"
+                aria-label={`Favourite: ${fav.location}`}
+              >
+                <img src={fav.picture} alt={fav.location} className="favourite-image" />
+                <div className="favourite-price">£{fav.price.toLocaleString()}</div>
+                <div className="favourite-info">{fav.bedrooms} bed {fav.type}</div>
+                <div className="fav-actions">
+                  <button className="fav-remove-btn" onClick={() => removeFromFavourites(fav.id)}>Remove from favourites</button>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+    </aside>
+
   </main>
 </div>
 );
