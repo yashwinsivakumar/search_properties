@@ -799,7 +799,7 @@ export default function SearchProperty({ onViewProperty }) {
 
           {/* Social Media */}
           <div className="social-section">
-            <h3 className="social-title">Follow Us</h3>
+            <h3 className="social-title">Follow Us On Social Media</h3>
             <div className="social-icons-wrapper">
               
                 <a href="https://facebook.com"
@@ -838,6 +838,51 @@ export default function SearchProperty({ onViewProperty }) {
           </div>
         </div>
       </section>
+      {/* Footer */}
+<footer className="footer" role="contentinfo">
+  <div className="footer-container">
+    {/* Footer Top */}
+    <div className="footer-top">
+      <div className="footer-brand">
+        <div className="footer-logo">
+          <Home size={32} />
+          <span className="footer-logo-text">Chooze|T</span>
+        </div>
+        <p className="footer-tagline">Find your dream home</p>
+      </div>
+
+      <div className="footer-links">
+        <div className="footer-column">
+          <h4 className="footer-heading">Quick Links</h4>
+          <ul>
+            <li><a href="#search">Search Properties</a></li>
+            <li><a href="#why-choose-us">Why Choose Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div className="footer-column">
+          <h4 className="footer-heading">Contact</h4>
+          <ul>
+            <li>+44 7123 456 789</li>
+            <li>info@choozet.co.uk</li>
+            <li>London, UK</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    {/* Footer Bottom */}
+    <div className="footer-bottom">
+      <p className="footer-copyright">
+        © {new Date().getFullYear()} Chooze|T. All rights reserved.
+      </p>
+      <p className="footer-credit">
+        Made with <span className="footer-heart">♥</span> for property seekers
+      </p>
+    </div>
+  </div>
+</footer>
 </div>
 );
 }

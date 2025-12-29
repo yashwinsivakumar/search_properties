@@ -912,8 +912,8 @@ font-size: 1.75rem;
 /* Contact Section */
 .contact-section {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  padding: 2rem 1.5rem;
-  margin-top: 0;
+  padding: 4rem 1.5rem;
+  margin-top: 4rem;
 }
 
 .contact-container {
@@ -1013,7 +1013,7 @@ font-size: 1.75rem;
 }
 
 .social-title {
-  font-size: 1.25rem;
+  font-size: 1.05rem;
   font-weight: 600;
   color: white;
   margin-bottom: 1.5rem;
@@ -1029,8 +1029,8 @@ font-size: 1.75rem;
 .social-icon-link {
   background: white;
   color: #667eea;
-  width: 45px;
-  height: 45px;
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -1048,8 +1048,8 @@ font-size: 1.75rem;
 }
 
 .social-icon-link svg {
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
 }
 
 /* Responsive Design */
@@ -1090,10 +1090,207 @@ font-size: 1.75rem;
   }
 
   .social-icon-link {
-    width: 45px;
-    height: 45px;
+    width: 35px;
+    height: 35px;
   }
 }
 
+/* Footer */
+.footer {
+  background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+  color: white;
+  margin-top: 4rem;
+  padding: 3rem 1.5rem 1.5rem;
+}
 
+.footer-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Footer Top */
+.footer-top {
+  display: grid;
+  grid-template-columns: 1.5fr 2fr;
+  gap: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 2rem;
+}
+
+/* Footer Brand */
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.footer-logo svg {
+  color: #667eea;
+}
+
+.footer-logo-text {
+  font-size: 1.75rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.footer-tagline {
+  font-size: 1rem;
+  color: #a0aec0;
+  margin: 0;
+  font-style: italic;
+}
+
+/* Footer Links */
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-heading {
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-column ul li {
+  font-size: 0.95rem;
+  color: #a0aec0;
+  transition: color 0.2s;
+}
+
+.footer-column ul li a {
+  color: #a0aec0;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-column ul li a:hover {
+  color: #667eea;
+}
+
+
+/* Footer Bottom */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-top: 1.5rem;
+}
+
+.footer-copyright {
+  font-size: 0.875rem;
+  color: #a0aec0;
+  margin: 0;
+}
+
+.footer-credit {
+  font-size: 0.875rem;
+  color: #a0aec0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-heart {
+  color: #e53e3e;
+  font-size: 1rem;
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .footer-links {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 2rem 1.5rem 1.5rem;
+  }
+
+  .footer-links {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .footer-logo-text {
+    font-size: 1.5rem;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 1.5rem 1rem;
+  }
+
+  .footer-brand {
+    text-align: center;
+    align-items: center;
+  }
+
+  .footer-logo {
+    justify-content: center;
+  }
+
+  .footer-social {
+    justify-content: center;
+  }
+
+  .footer-copyright,
+  .footer-credit {
+    font-size: 0.8rem;
+  }
+}
 
