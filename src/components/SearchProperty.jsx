@@ -762,6 +762,44 @@ export default function SearchProperty({ onViewProperty }) {
           </div>
         </div>
       </section>
+
+      {/* Contact Section */}
+      <section className="contact-section" id="contact">
+        <div className="contact-container">
+          <h2 className="contact-title">Contact Us!</h2>
+          <p className="contact-subtitle">
+            Have questions or need help finding your dream home? We're here to help.
+          </p>
+
+          <div className="contact-info-grid">
+            {/* Phone */}
+            <div className="contact-card">
+              <div className="contact-icon-wrapper">
+                <Phone size={28} />
+              </div>
+              <h3 className="contact-card-title">Phone</h3>
+              <a href="tel:+447123456789" className="contact-link">
+                +44 7123 456 789
+              </a>
+              <p className="contact-card-desc">Mon-Fri, 9am-6pm</p>
+            </div>
+
+            {/* Email */}
+            <div className="contact-card">
+              <div className="contact-icon-wrapper">
+                <Mail size={28} />
+              </div>
+              <h3 className="contact-card-title">Email</h3>
+              <a href="mailto:info@choozet.co.uk" className="contact-link">
+                info@choozIT.co.uk
+              </a>
+              <p className="contact-card-desc">We'll reply within 24 hours</p>
+            </div>
+          </div>
+
+          
+        </div>
+      </section>
 </div>
 );
 }
