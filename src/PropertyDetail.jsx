@@ -272,6 +272,14 @@ export default function PropertyDetail({ property, onBack, onAddFavourite, isFav
           >
             <ChevronRight size={32} />
           </button>
+
+          <button
+            className="lightbox-close"
+            onClick={() => setLightboxOpen(false)}
+            aria-label="Close lightbox"
+          >
+           <X size={28} />
+           </button>
         </div>
       )}
     </div>
