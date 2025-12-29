@@ -191,20 +191,41 @@ export default function PropertyDetail({ property, onBack, onAddFavourite, isFav
             )}
 
             {activeTab === "map" && (
-              <div
-                id="map-panel"
-                role="tabpanel"
-                aria-labelledby="map-tab"
-                className="tab-panel"
-              >
-                <h2 className="tab-panel-title">Location</h2>
-                <div className="map-placeholder">
-                  <MapPin size={48} />
-                  <p>{property.location}</p>
-                  <small>Google Maps integration would appear here</small>
-                </div>
-              </div>
-            )}
+  <div
+    id="map-panel"
+    role="tabpanel"
+    aria-labelledby="map-tab"
+    className="tab-panel"
+  >
+    <h2 className="tab-panel-title">Location</h2>
+
+    <div className="map-container">
+      <iframe
+        title="Property Location"
+        src={`https://maps.google.com/maps?q=${encodeURIComponent(property.location)}&output=embed`}
+        width="100%"
+        height="450"
+        style={{ border: 0, borderRadius: "8px" }}
+        loading="lazy"
+      ></iframe>
+
+      <div className="map-footer">
+        <MapPin size={18} />
+        <span>{property.location}</span>
+
+        <a
+          href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(property.location)}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="map-open-link"
+        >
+          Open in Google Maps →
+        </a>
+      </div>
+    </div>
+  </div>
+)}
+
           </div>
         </section>
       </div>
