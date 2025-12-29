@@ -850,7 +850,6 @@ export default function SearchProperty({ onViewProperty }) {
         </div>
         <p className="footer-tagline">Find your dream home</p>
       </div>
-
       <div className="footer-links">
         <div className="footer-column">
           <h4 className="footer-heading">Quick Links</h4>
@@ -860,7 +859,6 @@ export default function SearchProperty({ onViewProperty }) {
             <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
-
         <div className="footer-column">
           <h4 className="footer-heading">Contact</h4>
           <ul>
@@ -869,9 +867,31 @@ export default function SearchProperty({ onViewProperty }) {
             <li>London, UK</li>
           </ul>
         </div>
+        <div className="footer-column">
+          <h4 className="footer-heading">Newsletter</h4>
+          <p className="newsletter-text">Get the latest property listings delivered to your inbox</p>
+          <form className="newsletter-form" onSubmit={(e) => {
+            e.preventDefault();
+            const email = e.target.email.value;
+            if (email) {
+              alert('Thank you for subscribing!');
+              e.target.reset();
+            }
+          }}>
+            <input 
+              type="email" 
+              name="email"
+              placeholder="Enter your email" 
+              required 
+              className="newsletter-input"
+            />
+            <button type="submit" className="newsletter-button">
+              Subscribe
+            </button>
+          </form>
+        </div>
       </div>
     </div>
-
     {/* Footer Bottom */}
     <div className="footer-bottom">
       <p className="footer-copyright">
