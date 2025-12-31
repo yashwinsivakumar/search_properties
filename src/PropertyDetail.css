@@ -377,11 +377,189 @@
   color: #4a5568;
 }
 
+/* Floor Plan Section */
+.floor-plan-container {
+  padding: 2rem 0;
+}
+
+.floor-plan-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.floor-plan-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1a202c;
+  margin: 0;
+}
+
+.floor-plan-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.action-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1rem;
+  border: 2px solid #e2e8f0;
+  background: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: #4a5568;
+  transition: all 0.2s;
+}
+
+.action-button:hover {
+  border-color: #667eea;
+  color: #667eea;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+}
+
+.action-button svg {
+  width: 18px;
+  height: 18px;
+}
+
+.floor-plan-wrapper {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  background: #f7fafc;
+}
+
 .floor-plan-image {
   width: 100%;
-  max-width: 800px;
+  max-width: 900px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  cursor: zoom-in;
+  transition: transform 0.3s;
+}
+
+.floor-plan-image:hover {
+  transform: scale(1.02);
+}
+
+.floor-plan-info {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  background: #f7fafc;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid #667eea;
+}
+
+.info-title {
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.info-text {
+  color: #718096;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+/* Zoom Modal for Floor Plan */
+.zoom-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.95);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  animation: fadeIn 0.3s ease-in;
+}
+
+.zoom-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: rgba(255, 255, 255, 0.95);
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  z-index: 10001;
+}
+
+.zoom-close:hover {
+  background: white;
+  transform: scale(1.08);
+}
+
+.zoom-image {
+  max-width: 95%;
+  max-height: 95vh;
+  border-radius: 8px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+/* Responsive Floor Plan */
+@media (max-width: 768px) {
+  .floor-plan-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .floor-plan-actions {
+    width: 100%;
+  }
+
+  .action-button {
+    flex: 1;
+    justify-content: center;
+  }
+
+  .floor-plan-title {
+    font-size: 1.25rem;
+  }
+
+  .zoom-close {
+    width: 44px;
+    height: 44px;
+    top: 1rem;
+    right: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .floor-plan-container {
+    padding: 1rem 0;
+  }
+
+  .action-button {
+    font-size: 0.8rem;
+    padding: 0.5rem 0.75rem;
+  }
+
+  .zoom-modal {
+    padding: 1rem;
+  }
 }
 
 /* Map Container */

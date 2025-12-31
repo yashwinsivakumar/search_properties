@@ -7,6 +7,9 @@ import {
   Home,
   Bed,
   MapPin,
+  ZoomIn,
+  Download,
+
 } from "lucide-react";
 import "./PropertyDetail.css";
 
@@ -14,6 +17,7 @@ export default function PropertyDetail({ property, onBack, onAddFavourite, isFav
   const [activeTab, setActiveTab] = useState("description");
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [floorPlanZoom, setFloorPlanZoom] = useState(false);
 
   if (!property) {
     return (
@@ -175,20 +179,83 @@ export default function PropertyDetail({ property, onBack, onAddFavourite, isFav
             )}
 
             {activeTab === "floorplan" && (
-              <div
-                id="floorplan-panel"
-                role="tabpanel"
-                aria-labelledby="floorplan-tab"
-                className="tab-panel"
-              >
-                <h2 className="tab-panel-title">Floor Plan</h2>
-                <img
-                  src={property.floorPlan}
-                  alt="Floor plan"
-                  className="floor-plan-image"
-                />
-              </div>
-            )}
+  <div
+    id="floorplan-panel"
+    role="tabpanel"
+    aria-labelledby="floorplan-tab"
+    className="tab-panel"
+  >
+    <div className="floor-plan-container">
+      <div className="floor-plan-header">
+        <h2 className="floor-plan-title">Floor Plan</h2>
+        <div className="floor-plan-actions">
+          <button 
+            className="action-button"
+            onClick={() => setFloorPlanZoom(true)}
+            aria-label="View full size"
+          >
+            <ZoomIn size={18} />
+            View Full Size
+          </button>
+          <button 
+            className="action-button"
+            onClick={() => {
+              const link = document.createElement('a');
+              link.href = property.floorPlan;
+              link.download = 'floor-plan.jpg';
+              document.body.appendChild(link);
+              link.click();
+              document.body.removeChild(link);
+            }}
+            aria-label="Download floor plan"
+          >
+            <Download size={18} />
+            Download
+          </button>
+        </div>
+      </div>
+
+      <div className="floor-plan-wrapper">
+        <img
+          src={property.floorPlan}
+          alt="Property floor plan"
+          className="floor-plan-image"
+          onClick={() => setFloorPlanZoom(true)}
+        />
+      </div>
+
+      <div className="floor-plan-info">
+        <p className="info-title">About this floor plan</p>
+        <p className="info-text">
+          This floor plan provides an overview of the property layout including room dimensions and positioning. 
+          For detailed measurements or to discuss specific room layouts, please contact our team.
+        </p>
+      </div>
+    </div>
+
+    {/* Floor Plan Zoom Modal */}
+    {floorPlanZoom && (
+      <div 
+        className="zoom-modal"
+        onClick={() => setFloorPlanZoom(false)}
+      >
+        <button
+          className="zoom-close"
+          onClick={() => setFloorPlanZoom(false)}
+          aria-label="Close zoom view"
+        >
+          <X size={24} />
+        </button>
+        <img
+          src={property.floorPlan}
+          alt="Floor plan full size"
+          className="zoom-image"
+          onClick={(e) => e.stopPropagation()}
+        />
+      </div>
+    )}
+  </div>
+)}
 
             {activeTab === "map" && (
   <div
