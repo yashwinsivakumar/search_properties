@@ -49,9 +49,18 @@ export default function PropertyDetail({ property, onBack, onAddFavourite, isFav
     <div className="property-detail-container">
       {/* Back Button */}
 <button
-  onClick={onBack}
+  onClick={() => {
+    onBack();
+    // Scroll to results section after going back
+    setTimeout(() => {
+      const resultsSection = document.getElementById('results');
+      if (resultsSection) {
+        resultsSection.scrollIntoView({ behavior: 'auto', block: 'start' });
+      }
+    }, 100);
+  }}
   className="back-button"
-  aria-label="Back to search"
+  aria-label="Back to search results"
 >
   <ChevronLeft size={20} />
   <span>Back</span>

@@ -24,7 +24,7 @@ export const propertiesData = {
         "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&h=600&fit=crop",
         "https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=800&h=600&fit=crop",
         "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&h=600&fit=crop",
-      ],
+      ], 
       floorPlan:
         "https://images.unsplash.com/photo-1503174971373-b1f69850bded?w=600&h=400&fit=crop",
       added: { month: "October", day: 12, year: 2022 },
@@ -397,7 +397,7 @@ export default function SearchProperty({ onViewProperty }) {
         {/* Left Side - Search and Results */}
         <div>
           {/* Search Form */}
-          <section className="search-section">
+          <section className="search-section" id="search">
             <h2 className="section-title">
               <Search size={28} />
               Search Properties
@@ -576,7 +576,7 @@ export default function SearchProperty({ onViewProperty }) {
           
 
           {/* Results Section */}
-          <section className="results-section">
+          <section className="results-section" id="results">
             <h2 className="results-title">
               {searchResults.length}{" "}
               {searchResults.length === 1 ? "Property" : "Properties"} Found
@@ -606,7 +606,11 @@ export default function SearchProperty({ onViewProperty }) {
                       }`}
                       onClick={(e) => {
                         e.stopPropagation();
-                        addToFavourites(property);
+                        if (isFavourite(property.id)) {
+                          removeFromFavourites(property.id); // Remove if already favourite
+                        } else {
+                          addToFavourites(property); // Add if not favourite
+                        }
                       }}
                       aria-label={
                         isFavourite(property.id)
@@ -712,7 +716,7 @@ export default function SearchProperty({ onViewProperty }) {
 
   </main>
   {/* Why Choose Us Section */}
-      <section className="why-choose-section">
+      <section className="why-choose-section" id="why-choose-section">
         <div className="why-choose-container">
           <h2 className="why-choose-title">Why Choose Us?</h2>
           <p className="why-choose-subtitle">
@@ -855,7 +859,7 @@ export default function SearchProperty({ onViewProperty }) {
           <h4 className="footer-heading">Quick Links</h4>
           <ul>
             <li><a href="#search">Search Properties</a></li>
-            <li><a href="#why-choose-us">Why Choose Us</a></li>
+            <li><a href="#why-choose-section">Why Choose Us</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
