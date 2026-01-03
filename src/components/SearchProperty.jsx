@@ -25,8 +25,7 @@ export const propertiesData = {
         "https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=800&h=600&fit=crop",
         "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&h=600&fit=crop",
       ], 
-      floorPlan:
-        "https://images.unsplash.com/photo-1503174971373-b1f69850bded?w=600&h=400&fit=crop",
+      floorPlan: "https://images.unsplash.com/photo-1509644851169-2acc08aa25b5?w=800&h=600&fit=crop",
       added: { month: "October", day: 12, year: 2022 },
     },
     {
@@ -49,7 +48,7 @@ export const propertiesData = {
         "https://images.unsplash.com/photo-1560185127-6ed189bf02f4?w=800&h=600&fit=crop",
         "https://images.unsplash.com/photo-1502672023488-70e25813eb80?w=800&h=600&fit=crop",
       ],
-      floorPlan: "https://images.unsplash.com/photo-1545259742-12f8e50b5c0f?w=800&h=600&fit=crop",
+      floorPlan: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&h=600&fit=crop",
       added: { month: "September", day: 14, year: 2022 },
     },
     {
@@ -72,8 +71,7 @@ export const propertiesData = {
         "https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=800&h=600&fit=crop",
         "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&h=600&fit=crop",
       ],
-      floorPlan:
-        "https://images.unsplash.com/photo-1503174971373-b1f69850bded?w=600&h=400&fit=crop",
+      floorPlan: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=800&h=600&fit=crop",
       added: { month: "November", day: 5, year: 2023 },
     },
     {
@@ -96,8 +94,7 @@ export const propertiesData = {
         "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop",
        
       ],
-      floorPlan:
-        "https://images.unsplash.com/photo-1503174971373-b1f69850bded?w=600&h=400&fit=crop",
+      floorPlan: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop",
       added: { month: "December", day: 1, year: 2023 },
     },
     {
@@ -121,8 +118,7 @@ export const propertiesData = {
 
        
       ],
-      floorPlan:
-        "https://images.unsplash.com/photo-1503174971373-b1f69850bded?w=600&h=400&fit=crop",
+      floorPlan: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop",
       added: { month: "January", day: 20, year: 2024 },
     },
     {
@@ -145,8 +141,7 @@ export const propertiesData = {
         "https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=800&h=600&fit=crop",
         
       ],
-      floorPlan:
-        "https://images.unsplash.com/photo-1503174971373-b1f69850bded?w=600&h=400&fit=crop",
+      floorPlan: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop",
       added: { month: "March", day: 15, year: 2024 },
     },
     {
@@ -168,8 +163,7 @@ export const propertiesData = {
         "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&h=600&fit=crop",
         "https://images.unsplash.com/photo-1600210491369-e753d80a41f3?w=800&h=600&fit=crop",
       ],
-      floorPlan:
-        "https://images.unsplash.com/photo-1503174971373-b1f69850bded?w=600&h=400&fit=crop",
+      floorPlan: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800&h=600&fit=crop",
       added: { month: "April", day: 8, year: 2024 },
     },
   ],

@@ -188,83 +188,81 @@ export default function PropertyDetail({ property, onBack, onAddFavourite, isFav
             )}
 
             {activeTab === "floorplan" && (
-  <div
-    id="floorplan-panel"
-    role="tabpanel"
-    aria-labelledby="floorplan-tab"
-    className="tab-panel"
-  >
-    <div className="floor-plan-container">
-      <div className="floor-plan-header">
-        <h2 className="floor-plan-title">Floor Plan</h2>
-        <div className="floor-plan-actions">
-          <button 
-            className="action-button"
-            onClick={() => setFloorPlanZoom(true)}
-            aria-label="View full size"
-          >
-            <ZoomIn size={18} />
-            View Full Size
-          </button>
-          <button 
-            className="action-button"
-            onClick={() => {
-              const link = document.createElement('a');
-              link.href = property.floorPlan;
-              link.download = 'floor-plan.jpg';
-              document.body.appendChild(link);
-              link.click();
-              document.body.removeChild(link);
-            }}
-            aria-label="Download floor plan"
-          >
-            <Download size={18} />
-            Download
-          </button>
-        </div>
-      </div>
+              <div
+                id="floorplan-panel"
+                role="tabpanel"
+                aria-labelledby="floorplan-tab"
+                className="tab-panel"
+              >
+                <div className="floor-plan-container">
+                  <div className="floor-plan-wrapper">
+                    <img
+                      src={property.floorPlan}
+                      alt="Property floor plan"
+                      className="floor-plan-image blurred-floorplan"
+                      onClick={() => setFloorPlanZoom(true)}
+                    />
+                    <div className="floor-plan-overlay">
+                      <div className="overlay-content">
+                        <h3 className="overlay-title">Floor Plan Overview</h3>
+                        <div className="overlay-details">
+                          <div className="overlay-item">
+                            <span className="overlay-label">Total Area</span>
+                            <span className="overlay-value">
+                              {property.bedrooms * 350 + 400} sq ft (approx)
+                            </span>
+                          </div>
+                          <div className="overlay-item">
+                            <span className="overlay-label">Bedrooms</span>
+                            <span className="overlay-value">
+                              {property.bedrooms}
+                            </span>
+                          </div>
+                          <div className="overlay-item">
+                            <span className="overlay-label">Bathrooms</span>
+                            <span className="overlay-value">
+                              {Math.max(1, Math.floor(property.bedrooms / 2))} (
+                              {property.bedrooms > 3
+                                ? "Shower & Tub"
+                                : "Shower"}
+                              )
+                            </span>
+                          </div>
+                          <div className="overlay-item">
+                            <span className="overlay-label">Kitchen</span>
+                            <span className="overlay-value">
+                              1 (Fully Fitted)
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
-      <div className="floor-plan-wrapper">
-        <img
-          src={property.floorPlan}
-          alt="Property floor plan"
-          className="floor-plan-image"
-          onClick={() => setFloorPlanZoom(true)}
-        />
-      </div>
-
-      <div className="floor-plan-info">
-        <p className="info-title">About this floor plan</p>
-        <p className="info-text">
-          This floor plan provides an overview of the property layout including room dimensions and positioning. 
-          For detailed measurements or to discuss specific room layouts, please contact our team.
-        </p>
-      </div>
-    </div>
-
-    {/* Floor Plan Zoom Modal */}
-    {floorPlanZoom && (
-      <div 
-        className="zoom-modal"
-        onClick={() => setFloorPlanZoom(false)}
-      >
-        <button
-          className="zoom-close"
-          onClick={() => setFloorPlanZoom(false)}
-          aria-label="Close zoom view"
-        >
-          <X size={24} />
-        </button>
-        <img
-          src={property.floorPlan}
-          alt="Floor plan full size"
-          className="zoom-image"
-          onClick={(e) => e.stopPropagation()}
-        />
-      </div>
-    )}
-  </div>
-)}
+                {/* Floor Plan Zoom Modal */}
+                {floorPlanZoom && (
+                  <div
+                    className="zoom-modal"
+                    onClick={() => setFloorPlanZoom(false)}
+                  >
+                    <button
+                      className="lightbox-close"
+                      onClick={() => setFloorPlanZoom(false)}
+                      aria-label="Close zoom view"
+                    >
+                      <X size={28} />
+                    </button>
+                    <img
+                      src={property.floorPlan}
+                      alt="Floor plan full size"
+                      className="zoom-image"
+                      onClick={(e) => e.stopPropagation()}
+                    />
+                  </div>
+                )}
+              </div>
+            )}
 
             {activeTab === "map" && (
   <div
