@@ -49,8 +49,7 @@ export const propertiesData = {
         "https://images.unsplash.com/photo-1560185127-6ed189bf02f4?w=800&h=600&fit=crop",
         "https://images.unsplash.com/photo-1502672023488-70e25813eb80?w=800&h=600&fit=crop",
       ],
-      floorPlan:
-        "https://images.unsplash.com/photo-1503174971373-b1f69850bded?w=600&h=400&fit=crop",
+      floorPlan: "https://images.unsplash.com/photo-1545259742-12f8e50b5c0f?w=800&h=600&fit=crop",
       added: { month: "September", day: 14, year: 2022 },
     },
     {
