@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Search, Home, Calendar, MapPin, Bed, PoundSterling, Heart, Trash2, Phone, Mail, Facebook, Instagram, Twitter, Shield, Award } from "lucide-react";
 import "./SearchProperty.css";
 
@@ -193,6 +193,30 @@ export default function SearchProperty({ onViewProperty }) {
   );
   const [favourites, setFavourites] = useState([]);
   const [draggedProperty, setDraggedProperty] = useState(null);
+  const [isWhyChooseVisible, setIsWhyChooseVisible] = useState(false);
+  const whyChooseRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsWhyChooseVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (whyChooseRef.current) {
+      observer.observe(whyChooseRef.current);
+    }
+
+    return () => {
+      if (whyChooseRef.current) {
+        observer.unobserve(whyChooseRef.current);
+      }
+    };
+  }, []);
 
   // Helper function to convert month name to number
   const getMonthNumber = (monthName) => {
@@ -716,7 +740,11 @@ export default function SearchProperty({ onViewProperty }) {
 
   </main>
   {/* Why Choose Us Section */}
-      <section className="why-choose-section" id="why-choose-section">
+      <section 
+        className={`why-choose-section ${isWhyChooseVisible ? 'is-visible' : ''}`} 
+        id="why-choose-section"
+        ref={whyChooseRef}
+      >
         <div className="why-choose-container">
           <h2 className="why-choose-title">Why Choose Us?</h2>
           <p className="why-choose-subtitle">
