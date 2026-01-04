@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { Search, Home, Calendar, MapPin, Bed, PoundSterling, Heart, Trash2, Phone, Mail, Facebook, Instagram, Twitter, Shield, Award } from "lucide-react";
 import "./SearchProperty.css";
 
-// JSON Data - 7 properties total
+// JSON Data - data of all 7 properties 
 export const propertiesData = {
   properties: [
     {
