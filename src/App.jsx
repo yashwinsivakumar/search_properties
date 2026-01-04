@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import SearchProperty from "./components/SearchProperty";
-import PropertyDetail from "./PropertyDetail";
+import PropertyDetail from "./components/PropertyDetail";
 import { propertiesData } from "./components/SearchProperty";
 import "./App.css";
 

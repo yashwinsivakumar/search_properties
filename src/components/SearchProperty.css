@@ -392,6 +392,10 @@ overflow: hidden;
 box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 transition: all 0.3s;
 cursor: grab;
+display: flex;
+flex-direction: column;
+height: 100%;
+min-height: 550px;
 }
 .property-card:hover {
 transform: translateY(-8px);
@@ -473,6 +477,10 @@ backdrop-filter: blur(4px);
 /* Property Content */
 .property-content {
 padding: 1.5rem;
+display: flex;
+flex-direction: column;
+flex-grow: 1;
+gap: 1rem;
 }
 .property-price {
 font-size: 1.75rem;
@@ -760,7 +768,7 @@ font-size: 1.75rem;
   justify-content: center;
   gap: 0.5rem;
   transition: opacity 0.2s;
-  margin-top: 1rem;
+  margin-top: auto;
 }
 
 .btn-view-details:focus {
